@@ -32,7 +32,7 @@ body {
 
 .happiness {
   width: 100%;
-  height: calc(100vh - 8rem - 5rem);
+  height: calc(100vh - 10rem - 5rem);
   display: flex;
   margin-top: 2rem;
   gap: 2rem;
