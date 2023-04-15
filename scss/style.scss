@@ -1,0 +1,10 @@
+@use "./reset.scss";
+@use "./base.scss";
+@use "./abstract/colors";
+@use "./abstract/mixins";
+@use "./abstract/variables";
+@use "./components/header.scss";
+@use "./components/main.scss";
+@use "./components/footer.scss";
+@use "./abstract/mediaqueries";
+

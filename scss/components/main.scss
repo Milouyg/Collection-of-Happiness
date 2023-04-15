@@ -1,0 +1,135 @@
+@use "../abstract/colors";
+
+.happiness{
+    width: 100%;
+    height: calc(100vh - 8rem - 5rem);
+    display: flex;
+    margin-top: 2rem;
+    gap: 2rem;
+
+    &__section{
+        width: 100%;
+        height: 100%;
+
+        &--left{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        &--right{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0rem 2rem;
+        gap: 2rem;
+        width: 80%;
+        height: 80%;
+    }
+
+    &__li{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        width: 38%;
+        height: 40%;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__p{
+        position: absolute;
+
+        &--date{
+            top: 1%;
+            right: 1%;
+        }
+
+        &--title{
+            bottom: 1%;
+        }
+    }
+
+// right section
+
+    .detail{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0rem 2rem;
+        width: 80%;
+        height: 80%;
+
+        &__li{
+            list-style: none;
+            width: 100%;
+            position: relative;
+        }
+
+        &__img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &__p{
+
+            &--date{
+                top: 1%;
+                right: 1%;
+                position: absolute;
+            }
+
+            &--title{
+                bottom: 1%;
+                position: absolute;
+            }
+        }
+
+        &__group{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__download{
+            width: 20rem;
+            height: 3rem;
+            background: colors.$headercolor;
+            border: none;
+            border-radius: .5rem;
+            font-size: 2rem;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        &__link{
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+}
+
+
+
+
+
+
+

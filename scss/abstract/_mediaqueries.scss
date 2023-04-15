@@ -1,0 +1,31 @@
+
+
+@media screen and (max-width: 62.5rem){ // 1000px
+
+    .happiness{
+        flex-direction: column-reverse;
+        height: auto; 
+    }
+
+    .detail{
+
+        &__p--text{
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 37.5rem){ // 600px
+    .detail{
+
+        &__p--text{
+            margin-bottom: 1rem;
+        }
+        
+        &__group{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        }
+    }
+}
