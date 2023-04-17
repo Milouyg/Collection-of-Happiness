@@ -2,7 +2,7 @@ class JsonData {
     data;
     url;
 
-    constructor(newUrl){
+    constructor(newUrl) {
         this.url = newUrl;
     }
 
@@ -65,13 +65,17 @@ class Main {
         this.happinessMain.classList = "happiness";
 
         this.happinessLeftSection = new LeftSection(this.happinessMain, this, episodes);
-        this.happinessRightSection = new RightSection(this.happinessMain);
+        this.happinessRightSection = new RightSection(this.happinessMain, episodes);
     }
 
     render() {
         this.placeToRenderMain.appendChild(this.happinessMain);
         this.happinessLeftSection.render();
         this.happinessRightSection.render();
+    }
+
+    changeRightSection(clickedEpisode){
+        this.happinessRightSection.changeRightSectionContent(clickedEpisode);
     }
 }
 
@@ -83,12 +87,14 @@ class LeftSection {
     happinessUl;
     happinessLi;
     happinessImg;
-    
+
     happinessPDate;
     happinessPTitle;
     happinessPText;
+    episodes;
 
     constructor(placeToRender, happinessClassMain, episodes) {
+        this.episodes = episodes;
 
         this.placeToRender = placeToRender;
         this.happinessClassMain = happinessClassMain;
@@ -99,36 +105,50 @@ class LeftSection {
         this.happinessUl = document.createElement("ul");
         this.happinessUl.classList = "happiness__ul";
 
-        for(let i = 0; i < 4 ; i++){
-
+        // let existingNumber;
+        for (let i = 0; i < 4; i++) {
+            let randomNumber = this.randomizer();
+            
+            // The number may not be there twice
+                // while(existingNumber === randomNumber){
+                //     randomNumber = this.randomizer();
+                // }
+            
+                // existingNumber = randomNumber;
+                
                 this.happinessLi = document.createElement("li");
                 this.happinessLi.classList = "happiness__li";
-    
+                this.happinessLi.addEventListener("click", () => {
+                    this.happinessClassMain.changeRightSection(this.episodes[randomNumber]);
+                });
+                
                 this.happinessImg = document.createElement("img");
                 this.happinessImg.classList = "happiness__img";
-                this.happinessImg.setAttribute("src", "https://via.placeholder.com/400x400");
-                this.happinessImg.setAttribute("alt", "");   //   <----- Don't forget
+                this.happinessImg.setAttribute("src", episodes[randomNumber]["image"]["src"]);
+                this.happinessImg.setAttribute("alt", episodes[randomNumber]["image"]["alt"]);   //   <----- Don't forget
     
                 this.happinessPDate = document.createElement("p");
                 this.happinessPDate.classList = "detail__p detail__p--date";
-                this.happinessPDate.innerText = "Datum";
+                this.happinessPDate.innerText = episodes[randomNumber]["date (dd-mm-yyyy)"];
     
                 this.happinessPTitle = document.createElement("p");
                 this.happinessPTitle.classList = "detail__p detail__p--title";
-                this.happinessPTitle.innerText = "Titel";
+                this.happinessPTitle.innerText = episodes[randomNumber]["title"];
     
                 this.happinessUl.appendChild(this.happinessLi);
                 this.happinessLi.appendChild(this.happinessImg);
                 this.happinessLi.appendChild(this.happinessPDate);
                 this.happinessLi.appendChild(this.happinessPTitle);
-        }      
-        
+        }
+    }
+
+    randomizer() {
+        return Math.floor(Math.random() * (this.episodes.length - 1));
     }
 
     render() {
         this.placeToRender.appendChild(this.happinessLeftSection);
         this.happinessLeftSection.appendChild(this.happinessUl);
-        
     }
 }
 
@@ -147,9 +167,12 @@ class RightSection {
     detailDownload;
     detailLink;
 
-    constructor(placeToRender) {
-        this.placeToRender = placeToRender;
+    episodes;
 
+    constructor(placeToRender, episodes) {
+        this.placeToRender = placeToRender;
+        this.episodes = episodes;
+        console.log(this.episodes)
         this.happinessRightSection = document.createElement("section");
         this.happinessRightSection.classList = "happiness__section happiness__section--right";
 
@@ -171,15 +194,17 @@ class RightSection {
         this.detailImg.classList = "detail__img";
         this.detailImg.setAttribute("src", "https://via.placeholder.com/600x200");
         this.detailImg.setAttribute("alt", "")  //   <----- Don't forget
-        
+
         this.detailPDate = document.createElement("p");
         this.detailPDate.classList = "detail__p detail__p--date";
+        this.detailPDate.innerText = "date";
 
         this.detailPTitle = document.createElement("p");
         this.detailPTitle.classList = "detail__p detail__p--title";
+        this.detailPTitle.innerText = "title";
 
         this.detailPText = document.createElement("p");
-        this.detailPText.classList = "detail__p detail__p--text";
+        this.detailPText.classList = "detail__p detail__p--summary";
         this.detailPText.innerText = "Hier moet Json data gepakt worden";
 
         this.detailGroup = document.createElement("div");
@@ -212,6 +237,14 @@ class RightSection {
         this.detailGroup.appendChild(this.detailDownload);
         this.detailGroup.appendChild(this.detailLink);
     }
+
+    changeRightSectionContent(clickedEpisode){
+        this.detailImg.setAttribute("src", clickedEpisode["image"]["src"]);
+        this.detailImg.setAttribute("alt", clickedEpisode["image"]["alt"]);
+
+        this.detailPDate.innerText = clickedEpisode["date (dd-mm-yyyy)"];
+        this.detailPTitle.innerText = clickedEpisode["title"];
+    }
 }
 
 class Footer {
@@ -219,7 +252,7 @@ class Footer {
     footer;
     footerP;
 
-    constructor(placeToRenderFooter){
+    constructor(placeToRenderFooter) {
         this.placeToRenderFooter = document.getElementsByTagName(placeToRenderFooter)[0];
 
         this.footer = document.createElement("footer");
@@ -230,11 +263,12 @@ class Footer {
         this.footerP.innerText = "Gemaakt door: Milou Geervliet, 2D, Mediacollege";
     }
 
-    render(){
+    render() {
         this.placeToRenderFooter.appendChild(this.footer);
         this.footer.appendChild(this.footerP);
     }
 }
+
 
 class Collection {
     apiData;
@@ -257,8 +291,6 @@ class Collection {
                 this.footer = new Footer("body");
                 this.footer.render();
             });
-
-        
     }
 }
 

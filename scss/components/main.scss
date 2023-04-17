@@ -43,6 +43,10 @@
         list-style: none;
         width: 38%;
         height: 40%;
+
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     &__img{
@@ -99,6 +103,7 @@
                 bottom: 1%;
                 position: absolute;
             }
+
         }
 
         &__group{
