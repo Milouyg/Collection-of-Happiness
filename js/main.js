@@ -172,7 +172,7 @@ class RightSection {
     constructor(placeToRender, episodes) {
         this.placeToRender = placeToRender;
         this.episodes = episodes;
-        console.log(this.episodes)
+
         this.happinessRightSection = document.createElement("section");
         this.happinessRightSection.classList = "happiness__section happiness__section--right";
 
@@ -217,7 +217,8 @@ class RightSection {
         this.detailLink = document.createElement("a");
         this.detailLink.classList = "detail__link";
         this.detailLink.innerText = "Source >";
-        this.detailLink.setAttribute("href", "")    //   <----- Don't forget
+        this.detailLink.setAttribute("href", episodes["url"]);    //   <----- Don't forget
+        this.detailLink.setAttribute("target", "_blank");
     }
 
     render() {
@@ -244,7 +245,16 @@ class RightSection {
 
         this.detailPDate.innerText = clickedEpisode["date (dd-mm-yyyy)"];
         this.detailPTitle.innerText = clickedEpisode["title"];
+
+        this.detailDownload.addEventListener("click", () =>{
+            window.location = clickedEpisode["audio"];
+        });
+
+        this.detailLink.setAttribute("href", clickedEpisode["url"]);
     }
+
+
+
 }
 
 class Footer {
