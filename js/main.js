@@ -58,6 +58,7 @@ class Main {
     happinessRightSection;
     happinessLeftSection;
 
+
     constructor(placeToRenderMain, episodes) {
         this.placeToRenderMain = document.getElementsByTagName(placeToRenderMain)[0];
 
@@ -74,7 +75,7 @@ class Main {
         this.happinessRightSection.render();
     }
 
-    changeRightSection(clickedEpisode){
+    changeRightSection(clickedEpisode) {
         this.happinessRightSection.changeRightSectionContent(clickedEpisode);
     }
 }
@@ -96,6 +97,8 @@ class LeftSection {
     constructor(placeToRender, happinessClassMain, episodes) {
         this.episodes = episodes;
 
+
+
         this.placeToRender = placeToRender;
         this.happinessClassMain = happinessClassMain;
 
@@ -108,37 +111,38 @@ class LeftSection {
         // let existingNumber;
         for (let i = 0; i < 4; i++) {
             let randomNumber = this.randomizer();
-            
+
             // The number may not be there twice
-                // while(existingNumber === randomNumber){
-                //     randomNumber = this.randomizer();
-                // }
-            
-                // existingNumber = randomNumber;
-                
-                this.happinessLi = document.createElement("li");
-                this.happinessLi.classList = "happiness__li";
-                this.happinessLi.addEventListener("click", () => {
-                    this.happinessClassMain.changeRightSection(this.episodes[randomNumber]);
-                });
-                
-                this.happinessImg = document.createElement("img");
-                this.happinessImg.classList = "happiness__img";
-                this.happinessImg.setAttribute("src", episodes[randomNumber]["image"]["src"]);
-                this.happinessImg.setAttribute("alt", episodes[randomNumber]["image"]["alt"]);   //   <----- Don't forget
-    
-                this.happinessPDate = document.createElement("p");
-                this.happinessPDate.classList = "detail__p detail__p--date";
-                this.happinessPDate.innerText = episodes[randomNumber]["date (dd-mm-yyyy)"];
-    
-                this.happinessPTitle = document.createElement("p");
-                this.happinessPTitle.classList = "detail__p detail__p--title";
-                this.happinessPTitle.innerText = episodes[randomNumber]["title"];
-    
-                this.happinessUl.appendChild(this.happinessLi);
-                this.happinessLi.appendChild(this.happinessImg);
-                this.happinessLi.appendChild(this.happinessPDate);
-                this.happinessLi.appendChild(this.happinessPTitle);
+            // while(existingNumber === randomNumber){
+            //     randomNumber = this.randomizer();
+            // }
+
+            // existingNumber = randomNumber;
+
+            this.happinessLi = document.createElement("li");
+            this.happinessLi.classList = "happiness__li";
+            this.happinessLi.addEventListener("click", () => {
+                this.happinessClassMain.changeRightSection(this.episodes[randomNumber]);
+            })
+
+            // this.happinessClassMain.changeRightSection(this.episodes[0]);
+            this.happinessImg = document.createElement("img");
+            this.happinessImg.classList = "happiness__img";
+            this.happinessImg.setAttribute("src", episodes[randomNumber]["image"]["src"]);
+            this.happinessImg.setAttribute("alt", episodes[randomNumber]["image"]["alt"]);   //   <----- Don't forget
+
+            this.happinessPDate = document.createElement("p");
+            this.happinessPDate.classList = "detail__p detail__p--date";
+            this.happinessPDate.innerText = episodes[randomNumber]["date (dd-mm-yyyy)"];
+
+            this.happinessPTitle = document.createElement("p");
+            this.happinessPTitle.classList = "detail__p detail__p--title";
+            this.happinessPTitle.innerText = episodes[randomNumber]["title"];
+
+            this.happinessUl.appendChild(this.happinessLi);
+            this.happinessLi.appendChild(this.happinessImg);
+            this.happinessLi.appendChild(this.happinessPDate);
+            this.happinessLi.appendChild(this.happinessPTitle);
         }
     }
 
@@ -147,6 +151,7 @@ class LeftSection {
     }
 
     render() {
+        this.happinessClassMain.changeRightSection(this.episodes[0]);
         this.placeToRender.appendChild(this.happinessLeftSection);
         this.happinessLeftSection.appendChild(this.happinessUl);
     }
@@ -167,11 +172,8 @@ class RightSection {
     detailDownload;
     detailLink;
 
-    episodes;
-
-    constructor(placeToRender, episodes) {
+    constructor(placeToRender) {
         this.placeToRender = placeToRender;
-        this.episodes = episodes;
 
         this.happinessRightSection = document.createElement("section");
         this.happinessRightSection.classList = "happiness__section happiness__section--right";
@@ -217,7 +219,7 @@ class RightSection {
         this.detailLink = document.createElement("a");
         this.detailLink.classList = "detail__link";
         this.detailLink.innerText = "Source >";
-        this.detailLink.setAttribute("href", episodes["url"]);    //   <----- Don't forget
+        this.detailLink.setAttribute("href", "url");    //   <----- Don't forget
         this.detailLink.setAttribute("target", "_blank");
     }
 
@@ -239,14 +241,14 @@ class RightSection {
         this.detailGroup.appendChild(this.detailLink);
     }
 
-    changeRightSectionContent(clickedEpisode){
+    changeRightSectionContent(clickedEpisode) {
         this.detailImg.setAttribute("src", clickedEpisode["image"]["src"]);
         this.detailImg.setAttribute("alt", clickedEpisode["image"]["alt"]);
 
         this.detailPDate.innerText = clickedEpisode["date (dd-mm-yyyy)"];
         this.detailPTitle.innerText = clickedEpisode["title"];
 
-        this.detailDownload.addEventListener("click", () =>{
+        this.detailDownload.addEventListener("click", () => {
             window.location = clickedEpisode["audio"];
         });
 
