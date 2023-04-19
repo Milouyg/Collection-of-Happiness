@@ -8,8 +8,8 @@
             "audio": "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/dd6e09d0-92a2-40eb-be53-c7b24c023f8d/SoH_S07E20_Temple_Grandin_SEG_1_mix_3.5.mp3",
             "url": "https://greatergood.berkeley.edu/podcasts/item/why_we_need_friends_with_shared_interests_temple_grandin_autism_advocacy",
             "image": { 
-                "src": "https://via.placeholder.com/400x400",
-                "alt": "test"
+                "src": "../img/friendsSharedInterest.webp",
+                "alt": "Picture of a girl who is gaming"
             }
         },
         {
@@ -20,8 +20,8 @@
             "audio": "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/5ba6dd8e-59e4-4401-aebd-c367ebe6c828/SoH_S08E01_Kelly_Corrigan_SEG_1_mix_3.mp3",
             "url": "https://greatergood.berkeley.edu/podcasts/item/one_way_to_make_work_more_meaningful_kelly_corrigan",
             "image": { 
-                "src": "https://via.placeholder.com/400x400",
-                "alt": "test"
+                "src": "../img/workMoreMeaningful.webp",
+                "alt": "Picture of 2 people sitting and talking"
             }
         },
         {
@@ -32,8 +32,8 @@
             "audio": "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/e84d187e-db4d-4449-89ad-89c6871001f4/SoH_S07E18_Laura_Inserra_SEG_1_mix_4.mp3",
             "url": "https://greatergood.berkeley.edu/podcasts/item/how_music_evokes_awe",
             "image": { 
-                "src": "https://via.placeholder.com/400x400",
-                "alt": "test"
+                "src": "../img/musicEvokesAwe.webp",
+                "alt": "Picture of a girl who is listening to music with a headset on her head"
             }
         },
         {
@@ -44,8 +44,8 @@
             "audio": "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/30dc0d4a-1172-4ff6-8b88-5db7ffcdb4eb/SoH_S07E19_Monica_Guzman_SEG_1_mix_3.mp3",
             "url": "https://greatergood.berkeley.edu/podcasts/item/reminders_of_connectedness_monica_guzman",
             "image": { 
-                "src": "https://via.placeholder.com/400x400",
-                "alt": "test"
+                "src": "../img/remindersOfConnectedness.webp",
+                "alt": "Picture of someone who is chilling and is sitting on the couch"
             }
         },
         {
@@ -56,8 +56,8 @@
             "audio": "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/c8a49cf4-218f-49ce-bcac-b8554ec899ee/SoH_S07E17_Natalie_Look_to_the_Sky_SEG_1_mix_3.mp3",
             "url": "https://greatergood.berkeley.edu/podcasts/item/why_we_should_look_up_at_the_sky_the_science_of_happiness",
             "image": { 
-                "src": "https://via.placeholder.com/400x400",
-                "alt": "test"
+                "src": "../img/lookUp.webp",
+                "alt": "Picture of someone who is sitting on the grass and looking at the sky"
             }
         },
         {
@@ -68,8 +68,8 @@
             "audio": "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/f8cabe3b-d76e-46a2-8d3c-af1a752d82da/SoH_S07E13_Stephanie_Foo_SEG_1_mix_3.5.mp3",
             "url": "https://greatergood.berkeley.edu/podcasts/item/how_to_practice_gratitude_when_youre_not_feeling_thankful",
             "image": { 
-                "src": "https://via.placeholder.com/400x400",
-                "alt": "test"
+                "src": "../img/notThankful.webp",
+                "alt": "Picture of a girl who is sad"
             }
         },
         {
@@ -80,8 +80,8 @@
             "audio": "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/df1c0148-b578-4355-8dd1-d82ee4e78a2f/SoH_S07E10_Amy_Schneider_SEG_1_mix_3.mp3",
             "url": "https://greatergood.berkeley.edu/podcasts/item/amy_schneider_body_scan",
             "image": { 
-                "src": "https://via.placeholder.com/400x400",
-                "alt": "test"
+                "src": "../img/focusUnderPressure.webp",
+                "alt": "Picture of someone who is planning work "
             }
         }
     ]
