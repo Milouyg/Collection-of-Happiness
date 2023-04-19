@@ -65,8 +65,8 @@ class Main {
         this.happinessMain = document.createElement("main");
         this.happinessMain.classList = "happiness";
 
-        this.happinessLeftSection = new LeftSection(this.happinessMain, this, episodes);
         this.happinessRightSection = new RightSection(this.happinessMain, episodes);
+        this.happinessLeftSection = new LeftSection(this.happinessMain, this, episodes);
     }
 
     render() {
@@ -77,83 +77,6 @@ class Main {
 
     changeRightSection(clickedEpisode) {
         this.happinessRightSection.changeRightSectionContent(clickedEpisode);
-    }
-}
-
-class LeftSection {
-    placeToRender;
-    happinessClassMain;
-    happinessLeftSection;
-
-    happinessUl;
-    happinessLi;
-    happinessImg;
-
-    happinessPDate;
-    happinessPTitle;
-    happinessPText;
-    episodes;
-
-    constructor(placeToRender, happinessClassMain, episodes) {
-        this.episodes = episodes;
-
-
-
-        this.placeToRender = placeToRender;
-        this.happinessClassMain = happinessClassMain;
-
-        this.happinessLeftSection = document.createElement("section");
-        this.happinessLeftSection.classList = "happiness__section happiness__section--left";
-
-        this.happinessUl = document.createElement("ul");
-        this.happinessUl.classList = "happiness__ul";
-
-        // let existingNumber;
-        for (let i = 0; i < 4; i++) {
-            let randomNumber = this.randomizer();
-
-            // The number may not be there twice
-            // while(existingNumber === randomNumber){
-            //     randomNumber = this.randomizer();
-            // }
-
-            // existingNumber = randomNumber;
-
-            this.happinessLi = document.createElement("li");
-            this.happinessLi.classList = "happiness__li";
-            this.happinessLi.addEventListener("click", () => {
-                this.happinessClassMain.changeRightSection(this.episodes[randomNumber]);
-            })
-
-            // this.happinessClassMain.changeRightSection(this.episodes[0]);
-            this.happinessImg = document.createElement("img");
-            this.happinessImg.classList = "happiness__img";
-            this.happinessImg.setAttribute("src", episodes[randomNumber]["image"]["src"]);
-            this.happinessImg.setAttribute("alt", episodes[randomNumber]["image"]["alt"]);   //   <----- Don't forget
-
-            this.happinessPDate = document.createElement("p");
-            this.happinessPDate.classList = "detail__p detail__p--date";
-            this.happinessPDate.innerText = episodes[randomNumber]["date (dd-mm-yyyy)"];
-
-            this.happinessPTitle = document.createElement("p");
-            this.happinessPTitle.classList = "detail__p detail__p--title";
-            this.happinessPTitle.innerText = episodes[randomNumber]["title"];
-
-            this.happinessUl.appendChild(this.happinessLi);
-            this.happinessLi.appendChild(this.happinessImg);
-            this.happinessLi.appendChild(this.happinessPDate);
-            this.happinessLi.appendChild(this.happinessPTitle);
-        }
-    }
-
-    randomizer() {
-        return Math.floor(Math.random() * (this.episodes.length - 1));
-    }
-
-    render() {
-        this.happinessClassMain.changeRightSection(this.episodes[0]);
-        this.placeToRender.appendChild(this.happinessLeftSection);
-        this.happinessLeftSection.appendChild(this.happinessUl);
     }
 }
 
@@ -257,6 +180,82 @@ class RightSection {
 
 
 
+}
+
+class LeftSection {
+    placeToRender;
+    happinessClassMain;
+    happinessLeftSection;
+
+    happinessUl;
+    happinessLi;
+    happinessImg;
+
+    happinessPDate;
+    happinessPTitle;
+    happinessPText;
+    episodes;
+
+    constructor(placeToRender, happinessClassMain, episodes) {
+        this.episodes = episodes;
+
+        this.placeToRender = placeToRender;
+        this.happinessClassMain = happinessClassMain;
+
+        this.happinessLeftSection = document.createElement("section");
+        this.happinessLeftSection.classList = "happiness__section happiness__section--left";
+
+        this.happinessUl = document.createElement("ul");
+        this.happinessUl.classList = "happiness__ul";
+
+        // let existingNumber;
+        for (let i = 0; i < 4; i++) {
+            let randomNumber = this.randomizer();
+            if(i === 0){
+                this.happinessClassMain.changeRightSection(this.episodes[randomNumber]);
+            }
+
+            // The number may not be there twice
+            // while(existingNumber === randomNumber){
+            //     randomNumber = this.randomizer();
+            // }
+
+            // existingNumber = randomNumber;
+
+            this.happinessLi = document.createElement("li");
+            this.happinessLi.classList = "happiness__li";
+            this.happinessLi.addEventListener("click", () => {
+                this.happinessClassMain.changeRightSection(this.episodes[randomNumber]);
+            })
+
+            this.happinessImg = document.createElement("img");
+            this.happinessImg.classList = "happiness__img";
+            this.happinessImg.setAttribute("src", episodes[randomNumber]["image"]["src"]);
+            this.happinessImg.setAttribute("alt", episodes[randomNumber]["image"]["alt"]);   //   <----- Don't forget
+
+            this.happinessPDate = document.createElement("p");
+            this.happinessPDate.classList = "detail__p detail__p--date";
+            this.happinessPDate.innerText = episodes[randomNumber]["date (dd-mm-yyyy)"];
+
+            this.happinessPTitle = document.createElement("p");
+            this.happinessPTitle.classList = "detail__p detail__p--title";
+            this.happinessPTitle.innerText = episodes[randomNumber]["title"];
+
+            this.happinessUl.appendChild(this.happinessLi);
+            this.happinessLi.appendChild(this.happinessImg);
+            this.happinessLi.appendChild(this.happinessPDate);
+            this.happinessLi.appendChild(this.happinessPTitle);
+        }
+    }
+
+    randomizer() {
+        return Math.floor(Math.random() * (this.episodes.length - 1));
+    }
+
+    render() {
+        this.placeToRender.appendChild(this.happinessLeftSection);
+        this.happinessLeftSection.appendChild(this.happinessUl);
+    }
 }
 
 class Footer {
