@@ -106,7 +106,7 @@ class LeftSection {
         this.happinessUl = document.createElement("ul");
         this.happinessUl.classList = "happiness__ul";
 
-        // let existingNumber;
+        let existingNumbers = [];
         for (let i = 0; i < 4; i++) {
             let randomNumber = this.randomizer();
             if(i === 0){
@@ -114,11 +114,11 @@ class LeftSection {
             }
 
             // The number may not be there twice
-            // while(existingNumber === randomNumber){
-            //     randomNumber = this.randomizer();
-            // }
+            while(existingNumbers.includes(randomNumber)){
+                randomNumber = this.randomizer();
+            }
 
-            // existingNumber = randomNumber;
+            existingNumbers.push(randomNumber);
 
             this.happinessLi = document.createElement("li");
             this.happinessLi.classList = "happiness__li";
