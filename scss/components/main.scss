@@ -1,41 +1,32 @@
 @use "../abstract/colors";
+@use "../abstract/mixins";
+@use "../abstract/variables";
 
 .happiness{
     width: 100%;
     height: calc(100vh - 10rem - 5rem);
     display: flex;
-    margin-top: 2rem;
-    gap: 2rem;
-
 
     &__section{
         width: 100%;
         height: 100%;
 
         &--left{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include mixins.flexCenter;
         }
     
         &--right{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include mixins.flexCenter;
         }
     }
 
     &__ul{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include mixins.flexCenter;
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 0rem 2rem;
         gap: 2rem;
-        width: 80%;
-        height: 80%;
-        background: green;
+        width: 100%;
+        height: 90%;
     }
 
     &__li{
@@ -59,10 +50,13 @@
 
     &__p{
         position: absolute;
+        color: map-get(colors.$basicColors, "textColor");
 
         &--date{
             top: 1%;
             right: 1%;
+            
+            
         }
 
         &--title{
@@ -76,24 +70,31 @@
 
         &__ul{
             display: flex;
-            align-items: center;
-            justify-content: center;
             flex-direction: column;
-            width: 80%;
-            height: 80%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem;
+            width: 100%;
+            height: 90%;
         }
 
         &__li{
             list-style: none;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 90%;
-            height: 90%;
 
             &:nth-child(1){
-                max-width: 30rem;
+                width: 90%;
+                height: 45%;
+                position: relative;
+            }
+
+            &:nth-child(2){
+                width: 90%;
+
+            }
+
+            &:nth-child(3){
+                width: 90%;
+
             }
         }
 
@@ -104,20 +105,23 @@
         }
 
         &__p{
+            color: map-get(colors.$basicColors, "textColor");
 
             &--date{
                 top: 1%;
                 right: 1%;
                 position: absolute;
+
             }
 
             &--title{
                 bottom: 1%;
                 position: absolute;
+
             }
 
             &--summary{
-                
+
             }
 
         }
@@ -125,17 +129,16 @@
         &__group{
             display: flex;
             justify-content: space-between;
-            position: absolute;
             width: 100%;
         }
 
         &__download{
             width: 20rem;
             height: 3rem;
-            background: colors.$headercolor;
+            background: map-get(colors.$basicColors, "buttonColor" );
             border: none;
             border-radius: .5rem;
-            font-size: 2rem;
+            font-size: variables.$fontSize;
 
             &:hover{
                 cursor: pointer;
@@ -144,7 +147,7 @@
 
         &__link{
             text-decoration: none;
-            color: black;
+            color: map-get(colors.$basicColors, "textColor");
         }
     }
 

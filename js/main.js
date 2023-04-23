@@ -40,7 +40,7 @@ class Header {
         this.headerFigure.classList = "happiness__logo";
 
         this.headerIcon = document.createElement("i");
-        this.headerIcon.classList = " fa-solid fa-microphone icoon";
+        this.headerIcon.classList = " fa-solid fa-microphone happiness__icon";
     }
 
     render() {
@@ -129,11 +129,11 @@ class LeftSection {
             this.happinessImg.setAttribute("alt", episodes[randomNumber]["image"]["alt"]);   //   <----- Don't forget
 
             this.happinessPDate = document.createElement("p");
-            this.happinessPDate.classList = "detail__p detail__p--date";
+            this.happinessPDate.classList = "happiness__p happiness__p--date";
             this.happinessPDate.innerText = episodes[randomNumber]["date (dd-mm-yyyy)"];
 
             this.happinessPTitle = document.createElement("p");
-            this.happinessPTitle.classList = "detail__p detail__p--title";
+            this.happinessPTitle.classList = "happiness__p happiness__p--title";
             this.happinessPTitle.innerText = episodes[randomNumber]["title"];
 
             this.happinessUl.appendChild(this.happinessLi);

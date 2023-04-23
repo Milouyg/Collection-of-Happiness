@@ -1,23 +1,163 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
 
+@media screen and (max-width: 62.5rem) {
+    // 1000px
 
-@media screen and (max-width: 62.5rem){ // 1000px
-
-    .happiness{
+    .happiness {
         flex-direction: column-reverse;
+        height: unset;
+        gap: 2rem;
+
+        .detail {
+
+            &__li {
+
+                &:nth-child(2) {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
     }
 }
 
-@media screen and (max-width: 37.5rem){ // 600px
-    .detail{
+@media screen and (max-width: 59.375rem) {
+    // 950px
 
-        // &__p--text{
-        //     margin-bottom: 1rem;
-        // }
-        
-        // &__group{
-        // display: flex;
-        // flex-direction: column;
-        // gap: 1rem;
-        // }
+    .happiness {
+        &__h1 {
+            font-size: map-get(variables.$fontSizeMedia950, "h1");
+        }
+
+        &__icon{
+            font-size: variables.$icon3rem;
+        }
+
+        .detail {
+
+            &__p {
+
+                &--date {
+                    font-size: map-get(variables.$fontSizeMedia950, "imgtext");
+                }
+
+                &--title {
+                    font-size: map-get(variables.$fontSizeMedia950, "imgtext");
+                }
+
+                &--summary{
+                    font-size: map-get(variables.$fontSizeMedia950, "summary");
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 43.75rem) { // 700px
+
+    .happiness{
+
+        &__ul{
+            padding: unset;
+            width: 90%;
+        }
+
+
+        &__ul{
+            width: 90%;
+        }
+
+        &__p {
+
+            &--date{
+                font-size: map-get(variables.$fontSizeMedia700, "date");
+            }
+
+            &--title {
+                width: 100%;
+                @include mixins.ellipsis;
+                font-size: map-get(variables.$fontSizeMedia700, "title");
+            }
+
+            &--summary{
+                font-size: map-get(variables.$fontSizeMedia700, "summary");
+            }
+        }
+    
+    }
+
+    .footer{
+        &__p{
+            font-size: map-get(variables.$footerMedia, "footer90");
+        }
+    }
+}
+
+@media screen and (max-width: 37.5rem) {
+
+    // 600px
+    .happiness {
+
+        &__h1 {
+            font-size: map-get(variables.$fontSizeMedia600, "h1" );
+        }
+
+        &__ul{
+            width: 100%;
+        }
+
+        .detail {
+
+            &__ul{
+                width: 100%;
+            }
+
+            &__p--date {
+                font-size: map-get(variables.$fontSizeMedia600, "pDate");
+            }
+    
+            &__p--text {
+                margin-bottom: 1rem;
+            }
+    
+            &__group {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 1rem;
+            }
+    
+            &__download{
+                font-size: variables.$fontSizeDetailGroup;
+            }
+
+            &__link{
+                font-size: variables.$fontSizeDetailGroup;
+            }
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 31.25rem) {
+
+    // 500px
+    .detail {
+
+        &__p--date {
+            display: none;
+        }
+
+        &__p--title {
+            display: none;
+        }
+    }
+
+    .footer{
+        &__p{
+            font-size: map-get(variables.$footerMedia, "footer80");
+        }
     }
 }
