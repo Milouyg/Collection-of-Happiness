@@ -34,7 +34,7 @@ class Header {
 
         this.headerH1 = document.createElement("h1");
         this.headerH1.classList = "happiness__h1";
-        this.headerH1.innerText = "Logotext";
+        this.headerH1.innerText = "Collection of Happiness";
 
         this.headerFigure = document.createElement("figure");
         this.headerFigure.classList = "happiness__logo";
@@ -45,9 +45,8 @@ class Header {
 
     render() {
         this.placeToRenderHeader.appendChild(this.header);
+        this.header.appendChild(this.headerFigure);
         this.header.appendChild(this.headerH1);
-        this.header.appendChild(this.headerFigure);
-        this.header.appendChild(this.headerFigure);
         this.headerFigure.appendChild(this.headerIcon);
     }
 }
@@ -242,6 +241,8 @@ class RightSection {
     changeRightSectionContent(clickedEpisode) {
         this.detailImg.setAttribute("src", clickedEpisode["image"]["src"]);
         this.detailImg.setAttribute("alt", clickedEpisode["image"]["alt"]);
+
+        this.detailPText.innerText = clickedEpisode["summary"];
 
         this.detailPDate.innerText = clickedEpisode["date (dd-mm-yyyy)"];
         this.detailPTitle.innerText = clickedEpisode["title"];
