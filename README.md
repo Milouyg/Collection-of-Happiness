@@ -26,10 +26,9 @@ The methods that I used in this project are:
 ## Extras 
 I have added an extra feature in this assignment. There will be not more than one of the same episodes in the leftsection. I made it with a let variable which is an empty array and every time the for loop begins to run, it will check if the same number is already used. When this is the case, the variable will make a new random number with the randomizer function. You can check the code in my Javascript file on line 108 till 119.
 
-## Design
-[Desktop](img/designDesktop.webp)
+## Design and mobile
+![Desktop](img/designDesktop.webp)
 
-
-[Mobile](img/designMobile.webp)
+![Mobile](img/designMobile.webp)
 
 ## Uitwerking
