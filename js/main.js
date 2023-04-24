@@ -116,7 +116,6 @@ class LeftSection {
             while(existingNumbers.includes(randomNumber)){
                 randomNumber = this.randomizer();
             }
-
             existingNumbers.push(randomNumber);
 
             this.happinessLi = document.createElement("li");
@@ -126,7 +125,7 @@ class LeftSection {
             this.happinessImg = document.createElement("img");
             this.happinessImg.classList = "happiness__img";
             this.happinessImg.setAttribute("src", episodes[randomNumber]["image"]["src"]);
-            this.happinessImg.setAttribute("alt", episodes[randomNumber]["image"]["alt"]);   //   <----- Don't forget
+            this.happinessImg.setAttribute("alt", episodes[randomNumber]["image"]["alt"]);  
 
             this.happinessPDate = document.createElement("p");
             this.happinessPDate.classList = "happiness__p happiness__p--date";
@@ -191,7 +190,7 @@ class RightSection {
         this.detailImg = document.createElement("img");
         this.detailImg.classList = "detail__img";
         this.detailImg.setAttribute("src", firstEpisode["image"]["src"]);
-        this.detailImg.setAttribute("alt", "")  //   <----- Don't forget
+        this.detailImg.setAttribute("alt", firstEpisode["image"]["alt"]);  
 
         this.detailPDate = document.createElement("p");
         this.detailPDate.classList = "detail__p detail__p--date";
@@ -216,7 +215,7 @@ class RightSection {
         this.detailLink = document.createElement("a");
         this.detailLink.classList = "detail__link";
         this.detailLink.innerText = "Source >";
-        this.detailLink.setAttribute("href", firstEpisode["url"]);    //   <----- Don't forget
+        this.detailLink.setAttribute("href", firstEpisode["url"]);    
         this.detailLink.setAttribute("target", "_blank");
     }
 
@@ -276,7 +275,7 @@ class Footer {
 }
 
 
-class Collection {
+class App {
     apiData;
 
     header;
@@ -300,6 +299,6 @@ class Collection {
     }
 }
 
-const app = new Collection();
+const app = new App();
 
 
