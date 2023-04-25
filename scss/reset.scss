@@ -1,18 +1,18 @@
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
-    font-family: "Ubuntu" ,sans-serif;
+html {
+    font-family: "Ubuntu", sans-serif;
     font-weight: 300;
     font-size: 62.5%;
 }
 
-body{
-    font-size: 2rem;
+body {
+    font-size: 1.6rem;
     min-height: 100vh;
 }

@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-size: 2rem;
+  font-size: 1.6rem;
   min-height: 100vh;
 }
 
@@ -33,8 +33,9 @@ body {
 
 .happiness {
   width: 100%;
-  height: calc(100vh - 10rem - 5rem);
+  min-height: calc(100vh - 10rem - 5rem);
   display: flex;
+  padding: 4rem;
 }
 .happiness__section {
   width: 100%;
@@ -58,7 +59,6 @@ body {
   flex-wrap: wrap;
   gap: 2rem;
   width: 100%;
-  height: 90%;
 }
 .happiness__li {
   position: relative;
@@ -92,7 +92,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem;
   width: 100%;
   height: 90%;
 }
