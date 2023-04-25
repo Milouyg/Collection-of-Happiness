@@ -33,7 +33,7 @@ body {
 
 .happiness {
   width: 100%;
-  min-height: calc(100vh - 10rem - 5rem);
+  min-height: calc(100vh - 8rem - 5rem);
   display: flex;
   padding: 4rem;
 }
@@ -91,7 +91,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   height: 90%;
 }
@@ -105,6 +105,7 @@ body {
 }
 .happiness .detail__li:nth-child(2) {
   width: 90%;
+  margin-bottom: 2%;
 }
 .happiness .detail__li:nth-child(3) {
   width: 90%;
@@ -132,6 +133,7 @@ body {
   width: 100%;
 }
 .happiness .detail__download {
+  font-family: "Ubuntu", sans-serif;
   width: 20rem;
   height: 3rem;
   background: #FFA559;
@@ -141,6 +143,8 @@ body {
 }
 .happiness .detail__download:hover {
   cursor: pointer;
+  color: white;
+  background: hsl(27deg, 100%, 60%);
 }
 .happiness .detail__link {
   text-decoration: none;
@@ -236,10 +240,16 @@ body {
   }
 }
 @media screen and (max-width: 31.25rem) {
-  .detail__p--date {
+  .happiness__p--date {
     display: none;
   }
-  .detail__p--title {
+  .happiness__p--title {
+    display: none;
+  }
+  .happiness .detail__p--date {
+    display: none;
+  }
+  .happiness .detail__p--title {
     display: none;
   }
   .footer__p {

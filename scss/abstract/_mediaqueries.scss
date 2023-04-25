@@ -141,19 +141,34 @@
     
 }
 
-@media screen and (max-width: 31.25rem) {
+@media screen and (max-width: 31.25rem) {  // 500px
 
-    // 500px
-    .detail {
+    .happiness{
 
-        &__p--date {
-            display: none;
+        &__p{
+
+            &--date{
+                display: none;
+            }
+
+            &--title {
+                display: none;
+            }
         }
+        
 
-        &__p--title {
-            display: none;
+        .detail {
+
+            &__p--date {
+                display: none;
+            }
+    
+            &__p--title {
+                display: none;
+            }
         }
     }
+
 
     .footer{
         &__p{

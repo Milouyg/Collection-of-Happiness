@@ -75,7 +75,7 @@ class Main {
     }
 
     changeRightSection(clickedEpisode) {
-        this.happinessRightSection.changeRightSectionContent(clickedEpisode);
+        this.happinessRightSection.detailCard.changeRightSectionContent(clickedEpisode);
     }
 }
 
@@ -155,6 +155,25 @@ class LeftSection {
 class RightSection {
     placeToRender;
     happinessRightSection;
+
+    constructor(placeToRender, firstEpisode) {
+        this.placeToRender = placeToRender;
+
+        this.happinessRightSection = document.createElement("section");
+        this.happinessRightSection.classList = "happiness__section happiness__section--right";
+
+        this.detailCard = new DetailCard(this.happinessRightSection, firstEpisode);
+    }
+
+    render() {
+        this.placeToRender.appendChild(this.happinessRightSection);
+        this.detailCard.render();
+    }
+}
+
+class DetailCard {
+    happinessRightSection;
+
     detailUl;
     detailLi;
 
@@ -167,11 +186,8 @@ class RightSection {
     detailDownload;
     detailLink;
 
-    constructor(placeToRender, firstEpisode) {
-        this.placeToRender = placeToRender;
-
-        this.happinessRightSection = document.createElement("section");
-        this.happinessRightSection.classList = "happiness__section happiness__section--right";
+    constructor(happinessRightSection, firstEpisode){
+        this.happinessRightSection = happinessRightSection;
 
         this.detailUl = document.createElement("ul");
         this.detailUl.classList = "detail__ul";
@@ -219,9 +235,9 @@ class RightSection {
         this.detailLink.setAttribute("target", "_blank");
     }
 
-    render() {
-        this.placeToRender.appendChild(this.happinessRightSection);
+    render(){
         this.happinessRightSection.appendChild(this.detailUl);
+
         // Li top
         this.detailUl.appendChild(this.detailLiTop);
         this.detailLiTop.appendChild(this.detailImg);
@@ -250,6 +266,7 @@ class RightSection {
 
         this.detailLink.setAttribute("href", clickedEpisode["url"]);
     }
+
 }
 
 class Footer {
