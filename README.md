@@ -30,3 +30,4 @@ I have added an extra feature in this assignment. There will be not more than on
 ![Desktop](img/designDesktop.webp) ![Mobile](img/designMobile.webp)
 
 ## Uitwerking
+![Desktop](img/uitwerking.webp) ![Mobile](img/uitwerkingMobile.webp)
