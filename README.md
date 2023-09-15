@@ -1,8 +1,7 @@
 # Collection of Happiness
 
 ## What do you read in this file?
-In this file you will read about the final assignment of period 2.3 Deepdive Front-end,
-which strategy I have implemented and images of the design and realisation. 
+In this file you will read about the final assignment of period 2.3 Deepdive Front-end, which strategy I have implemented and images of the design and realisation. 
 
 ## Final assignment
 For this final assignment I had to make a user-friendly webpage that collects

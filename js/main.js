@@ -304,7 +304,7 @@ class App {
         this.header = new Header("body");
         this.header.render();
 
-        this.apiData = new JsonData("../data/data.json");
+        this.apiData = new JsonData("./data/data.json");
         this.apiData.getJsonData()
             .then((episodes) => {
                 this.main = new Main("body", episodes);
